@@ -1,6 +1,6 @@
 import { Router, Request, Response } from 'express'
 
-import { ApiResponses } from '../helpers/api.respones'
+import { ApiResponses } from '../helpers/api.responses'
 
 const router = Router()
 
