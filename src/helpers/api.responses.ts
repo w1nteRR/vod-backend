@@ -12,8 +12,12 @@ export class ApiResponses {
     return this.res.status(200).json(body)
   }
 
-  _400(message: string) {
+  _400 (message: string) {
     return this.res.status(400).json(message)
   }
 
+  _404 (message: string) {
+    return this.res.status(404).json(message)
+  }
+  
 }
