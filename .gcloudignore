@@ -1,0 +1,15 @@
+.gcloudignore
+
+.git
+.gitignore
+
+.env
+.eslint
+
+/node_modules
+
+README.md
+
+package-lock.json
+
+nodemon.json
