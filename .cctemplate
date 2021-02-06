@@ -1,0 +1,12 @@
+{
+    "metadata": {
+        "version": "1"
+    },
+    "templates": [
+        {
+            "path": "./",
+            "name": "Node.js App",
+            "description": "Node.js sample template"
+        }
+    ]
+}
