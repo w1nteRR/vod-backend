@@ -6,7 +6,7 @@ COPY package*.json ./
 
 #install dependencies
 
-RUN npm install
+RUN npm install --production
 
 # Copy local code to the container image.
 COPY . ./
