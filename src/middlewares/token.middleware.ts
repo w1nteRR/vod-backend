@@ -8,9 +8,11 @@ export const decodeAccessToken = (req: Request, res: Response, next: NextFunctio
 
   if(!token) return response._404('No token')
 
-  const sub = JSON.parse(Buffer.from(token, 'base64').toString()).sub
+  const sub: string = JSON.parse(Buffer.from(token, 'base64').toString()).sub
 
-  Object.assign(req.body = {}, { sub })
+  if(!req.body) req.body = {}
+  
+  Object.assign(req.body, { sub })
 
   next()
 }
