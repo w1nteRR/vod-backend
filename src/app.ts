@@ -6,7 +6,7 @@ import router from './api/router'
 import { config } from './database/database.config'
 
 const app = express()
-
+app.use(express.json())
 app.use(router())
 
 const PORT = process.env.PORT || 8080
