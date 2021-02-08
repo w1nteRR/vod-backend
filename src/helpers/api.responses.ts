@@ -8,7 +8,7 @@ export class ApiResponses {
     this.res = res
   }
 
-  _200 (body: { [key: string]: string }) {
+  _200 (body: { [key: string]: string | number | boolean | unknown }) {
     return this.res.status(200).json(body)
   }
 

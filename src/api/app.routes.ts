@@ -1,23 +1,23 @@
 import { Router, Request, Response } from 'express'
 
 import { ApiResponses } from '../helpers/api.responses'
+import { SimilarService } from '../services/similar.service'
 
 const router = Router()
 
 export default (app: Router) => {
-  app.use('/', router)
+  app.use('/similar', router)
 
-  router.get('/', async (req: Request, res: Response) => {
+  router.post('/tags', async (req: Request, res: Response) => {    
+    const { tags } = req.body
 
     const api = new ApiResponses(res)
 
     try {
+      const films = await SimilarService.byTags(tags)
 
-      return api._200({ message: 'Ok' })
-
+      return api._200({ films })
     } catch (err) {
-      console.log(err)
-
       return api._400(err.message)
     }
   })
